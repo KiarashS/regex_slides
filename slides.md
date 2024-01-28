@@ -4,7 +4,10 @@ background: ./images/intro.png
 class: text-center
 lineNumbers: false
 favicon: ./favicon.png
-info: Ultimate Guide to Regular Expressions for scientist
+info: |+
+  Ultimate Guide to Regular Expressions for scientist
+
+  [www.kiarashs.ir](https://www.kiarashs.ir/)
 author: Kiarash Soleimanzadeh
 keywords: regular expressions,regex,scholar,academia,nlp,natural language processing,machine learning,deep learning
 presenter: false
