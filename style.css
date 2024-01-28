@@ -15,9 +15,10 @@ h1{
   }
 
   h1 .header-one-highlight {
-    border-bottom: 3px solid #8429fc;
-    padding: 0 8px;
-    border-radius: 7px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(136,46,255,1) 35%, rgba(196,1,219,1) 100%);
+    border-image-slice: 1;
+    padding: 0 5px;
   }
   
   .glass-card, pre {
