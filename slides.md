@@ -8,7 +8,7 @@ info: Ultimate Guide to Regular Expressions for scientist
 author: Kiarash Soleimanzadeh
 keywords: regular expressions,regex,scholar,academia,nlp,natural language processing,machine learning,deep learning
 presenter: false
-download: true
+download: false
 exportFilename: 'regex-slides'
 export:
   format: pdf
