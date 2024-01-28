@@ -4,13 +4,10 @@ background: ./images/intro.png
 class: text-center
 lineNumbers: false
 favicon: ./favicon.png
-info: |
-  ## Ultimate Guide to Regular Expressions
-  Presentation slides for scientist.
 info: Ultimate Guide to Regular Expressions for scientist
 author: Kiarash Soleimanzadeh
 keywords: regular expressions,regex,scholar,academia,nlp,natural language processing,machine learning,deep learning
-presenter: true
+presenter: false
 download: true
 exportFilename: 'regex-slides'
 export:
@@ -19,6 +16,8 @@ export:
   dark: false
   withClicks: false
   withToc: false
+aspectRatio: '16/9'
+canvasWidth: 980
 drawings:
   persist: false
 transition: slide-left
