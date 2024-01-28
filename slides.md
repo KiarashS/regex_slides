@@ -5,10 +5,20 @@ class: text-center
 lineNumbers: false
 favicon: ./favicon.png
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## Ultimate Guide to Regular Expressions
+  Presentation slides for scientist.
+info: Ultimate Guide to Regular Expressions for scientist
+author: Kiarash Soleimanzadeh
+keywords: regular expressions,regex,scholar,academia,nlp,natural language processing,machine learning,deep learning
+presenter: true
+download: true
+exportFilename: 'regex-slides'
+export:
+  format: pdf
+  timeout: 30000
+  dark: false
+  withClicks: false
+  withToc: false
 drawings:
   persist: false
 transition: slide-left
