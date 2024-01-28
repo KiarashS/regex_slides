@@ -61,20 +61,20 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # Intro
 
-Regex is short for <span class="highlight-gray">Regular Expression</span>. It helps to match, find, or manage text.
+> A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
 <v-click>
-<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
-<div class="text-sm mt-2 glass-card mb-5">Understand? <span class="highlight-green">OK</span> or NOT</div>
+<p class="text-sm">Regex is short for <span class="highlight-gray">Regular Expression</span>. A regular expression is a pattern that is matched against a subject string from left to right. Regular expressions are used to replace text within a string, validate forms, extract a substring from a string based on a pattern match, and so much more.</p>
 </v-click>
 
 <v-click>
-<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
-
-```regex
-/OK/g
-```
+<p class="text-sm">Imagine you are writing an application and you want to set the rules for when a user chooses their username. We want to allow the username to contain letters, numbers, underscores and hyphens. We also want to limit the number of characters in the username so it does not look ugly. We can use the following regular expression to validate the username:</p>
 </v-click>
+
+<div class="flex justify-center items-center m-auto">
+  <v-click><div class="flex-1"><img src="/images/regexp.png" alt="Regex" width="390px" /></div></v-click>
+  <v-click><div class="flex-1 text-sm">This regular expression can accept the strings <span class="highlight-gray">john_doe</span>, <span class="highlight-gray">jo-hn_doe</span> and <span class="highlight-gray">john12_as</span>. It does not match <span class="highlight-gray">Jo</span> because that string contains an uppercase letter and also it is too short.</div></v-click>
+</div>
 
 ---
 
