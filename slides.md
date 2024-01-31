@@ -230,3 +230,135 @@ abcd<span class="highlight-green">e</span><span class="highlight-green">f</span>
 /[3-6]/g
 ```
 </v-click>
+
+---
+
+# Repetitions
+
+<p>Some special characters are used to specify how many times a character will be repeated in the text. These special characters are the plus <span class="highlight-gray">+</span>, the asterisk <span class="highlight-gray">*</span>, and the question mark <span class="highlight-gray">?</span>.</p>
+
+---
+
+<h1>Asterisk  <span class="header-one-highlight">*</span></h1>
+
+<p>We put an asterisk <span class="highlight-gray">*</span> after a character to indicate that the character may either not match at all or can match many times. For example, indicate that the letter <span class="highlight-gray">e</span> should never occur in the text, or it can occur once or more side by side.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">br</span><span class="highlight-green">ber</span><span class="highlight-green">beer</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/be*r/g
+```
+</v-click>
+
+---
+
+<h1>Plus Sign  <span class="header-one-highlight">+</span></h1>
+
+<p>To indicate that a character can occur one or more times, we put a plus sign <span class="highlight-gray">+</span> after a character. For example, indicate that the letter <span class="highlight-gray">e</span> can occur one or more times in the text.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+br<span class="highlight-green">ber</span><span class="highlight-green">beer</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/be+r/g
+```
+</v-click>
+
+---
+
+<h1>Question Mark  <span class="header-one-highlight">?</span></h1>
+
+<p>To indicate that a character is optional, we put a <span class="highlight-gray">?</span> question mark after a character. For example, indicate that the following letter <span class="highlight-gray">u</span> is optional.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">color</span>, <span class="highlight-green">colour</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/colou?r/g
+```
+</v-click>
+
+---
+
+# Curly Braces - 1
+
+<p>To express a certain number of occurrences of a character, at the end we write curly braces <span class="highlight-gray">{n}</span> along with how many times we want it to occur. For example, indicate that the following letter <span class="highlight-gray">e</span> can occur only <span class="highlight-gray">2</span> times.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+ber<span class="highlight-green">beer</span>beeer beeeer
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/be{2}r/g
+```
+</v-click>
+
+---
+
+# Curly Braces - 2
+
+<p>To express at least a certain number of occurrences of a character, immediately after the character we write at least how many times we want it to occur followed by a comma <span class="highlight-gray">,</span> and wrapped inside curly braces <span class="highlight-gray">{n,}</span>. For example, indicate that the following letter <span class="highlight-gray">e</span> can occur at least <span class="highlight-gray">3</span> times.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+ber beer<span class="highlight-green">beeer</span><span class="highlight-green">beeeer</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/be{3,}r/g
+```
+</v-click>
+
+---
+
+# Curly Braces - 3
+
+<p>To express the occurrence of a character in a certain number range, we write curly braces <span class="highlight-gray">{x,y}</span> with the interval we want to go to the end. For example, indicate that the following letter <span class="highlight-gray">e</span> can only occur between <span class="highlight-gray">1</span> and <span class="highlight-gray">3</span>.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">ber</span><span class="highlight-green">beer</span><span class="highlight-green">beeer</span>beeeer
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/be{1,3}r/g
+```
+</v-click>
