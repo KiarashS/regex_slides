@@ -362,3 +362,66 @@ ber beer<span class="highlight-green">beeer</span><span class="highlight-green">
 /be{1,3}r/g
 ```
 </v-click>
+
+---
+
+<h1>Parentheses  <span class="header-one-highlight">()</span>: Grouping</h1>
+
+<p>We can group an expression and use these groups to reference or enforce some rules. To group an expression, we enclose <span class="highlight-gray">()</span> in parentheses. For now just group <span class="highlight-gray">haa</span> below.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+ha-ha, <span class="highlight-green">haa</span>-<span class="highlight-green">haa</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(haa)/g
+```
+</v-click>
+
+---
+
+# Referencing a Group
+
+<p>The words <span class="highlight-gray">ha</span> and <span class="highlight-gray">haa</span> are grouped below. The first group is used by writing <span class="highlight-gray">\1</span> to avoid rewriting. Here 1 denotes the order of grouping. Type <span class="highlight-gray">\2</span> at the end of the expression to refer to the second group.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">ha-ha,haa-haa</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(ha)-\1,(haa)-\2/g
+```
+</v-click>
+
+---
+
+<h1>Parentheses  <span class="header-one-highlight">(?:)</span>: Non-capturing Grouping <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-capturing Grouping</span></h1>
+
+<p>You can group an expression and ensure that it is not captured by references. For example, below are two groups. However, the first group reference we denote with <span class="highlight-gray">\1</span> actually indicates the second group, as the first is a non-capturing group.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">ha-ha,haa-haa</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(?:ha)-ha,(haa)-\1/g
+```
+</v-click>
