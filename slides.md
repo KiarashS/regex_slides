@@ -24,7 +24,9 @@ canvasWidth: 980
 drawings:
   persist: false
 transition: slide-left
-title: Regular Expressions (Regex)
+title: Regular Expressions
+titleTemplate: '%s - Regex'
+selectable: false
 mdc: true
 fonts:
   # for code blocks, inline code, etc.
@@ -44,22 +46,17 @@ Presentation slides for AI scientists
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <!-- <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button> -->
   <a href="https://github.com/KiarashS" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
+---
+title: 'Intro'
 ---
 
-# Intro
+# Intro 
 
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
@@ -77,8 +74,10 @@ The last comment block of each slide will be treated as slide notes. It will be 
 </div>
 
 ---
+title: What is Regular Expressions?
+---
 
-# What is Regular Expressions?
+<h1>What is Regular Expressions? <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Regular Expression</span></h1>
 
 <p>Regular Expressions are a string of characters that express a search pattern. Often abbreviated as <span class="highlight-gray">Regex</span> or <span class="highlight-gray">Regexp</span>. It is especially used to find or replace words in texts. In addition, we can test whether a text complies with the rules we set.</p>
 
@@ -104,8 +103,10 @@ music.mp4<br>
 </v-click>
 
 ---
+title: 'Basic Matchers'
+---
 
-# Basic Matchers
+<h1>Basic Matchers <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Basic Matchers</span></h1>
 
 <p>The character or word we want to find is written directly. It is similar to a normal search process. For example, we want to find the word <span class="highlight-gray">curious</span> in the text.</p>
 
@@ -127,8 +128,10 @@ music.mp4<br>
 </v-click>
 
 ---
+title: 'The Full Stop'
+---
 
-<h1>Dot <span class="header-one-highlight">.</span>: Any Character</h1>
+<h1>Dot <span class="header-one-highlight">.</span>: Any Character <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">The Full Stop</span></h1>
 
 <p>The period <span class="highlight-gray">.</span> allows selecting any character, including special characters and spaces.</p>
 
@@ -148,8 +151,10 @@ music.mp4<br>
 </v-click>
 
 ---
+title: 'Character Sets'
+---
 
-<h1>Character Sets <span class="header-one-highlight">[abc]</span></h1>
+<h1>Character Sets <span class="header-one-highlight">[abc]</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Character Sets</span></h1>
 
 <p>If one of the characters in a word can be various characters, we write it in square brackets <span class="highlight-gray">[]</span> with all alternative characters. For example, to write an expression that can find all the words in the text, type the characters <span class="highlight-gray">a</span>, <span class="highlight-gray">e</span>, <span class="highlight-gray">i</span>, <span class="highlight-gray">o</span>, <span class="highlight-gray">u</span> adjacently within square brackets <span class="highlight-gray">[]</span>.</p>
 
@@ -169,8 +174,10 @@ music.mp4<br>
 </v-click>
 
 ---
+title: 'Negated Character Sets'
+---
 
-<h1>Negated Character Sets <span class="header-one-highlight">[^abc]</span></h1>
+<h1>Negated Character Sets <span class="header-one-highlight">[^abc]</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Negated Character Sets</span></h1>
 
 <p>To find all words in the text below, except for <span class="highlight-gray">ber</span> and <span class="highlight-gray">bor</span>, type <span class="highlight-gray">e</span> and <span class="highlight-gray">o</span> side by side after the caret <span class="highlight-gray">^</span> character inside square brackets <span class="highlight-gray">[]</span>.</p>
 
@@ -190,8 +197,10 @@ music.mp4<br>
 </v-click>
 
 ---
+title: 'Character Sets: Alphanumeric Range'
+---
 
-<h1>Letter Range <span class="header-one-highlight">[a-z]</span></h1>
+<h1>Letter Range <span class="header-one-highlight">[a-z]</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Character Sets: Alphanumeric Range</span></h1>
 
 <p>To find the letters in the specified range, the starting letter and the ending letter are written in square brackets <span class="highlight-gray">[]</span> with a dash between them <span class="highlight-gray">-</span>. It is case-sensitive. Type the expression that will select all lowercase letters between <span class="highlight-gray">e</span> and <span class="highlight-gray">o</span>, including themselves.</p>
 
@@ -211,8 +220,10 @@ abcd<span class="highlight-green">e</span><span class="highlight-green">f</span>
 </v-click>
 
 ---
+title: 'Character Sets: Digit Range'
+---
 
-<h1>Number Range <span class="header-one-highlight">[0-9]</span></h1>
+<h1>Number Range <span class="header-one-highlight">[0-9]</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Character Sets: Digit Range</span></h1>
 
 <p>To find the numbers in the specified range, the starting number and the ending number are written in square brackets <span class="highlight-gray">[]</span> with a dash <span class="highlight-gray">-</span> between them. Write an expression that will select all numbers between <span class="highlight-gray">3</span> and <span class="highlight-gray">6</span>, including themselves.</p>
 
@@ -232,14 +243,18 @@ abcd<span class="highlight-green">e</span><span class="highlight-green">f</span>
 </v-click>
 
 ---
+title: 'Repetitions'
+---
 
-# Repetitions
+<h1>Repetitions <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions</span></h1>
 
 <p>Some special characters are used to specify how many times a character will be repeated in the text. These special characters are the plus <span class="highlight-gray">+</span>, the asterisk <span class="highlight-gray">*</span>, and the question mark <span class="highlight-gray">?</span>.</p>
 
 ---
+title: 'Repetitions: Asterisk'
+---
 
-<h1>Asterisk  <span class="header-one-highlight">*</span></h1>
+<h1>Asterisk  <span class="header-one-highlight">*</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: Asterisk</span></h1>
 
 <p>We put an asterisk <span class="highlight-gray">*</span> after a character to indicate that the character may either not match at all or can match many times. For example, indicate that the letter <span class="highlight-gray">e</span> should never occur in the text, or it can occur once or more side by side.</p>
 
@@ -259,8 +274,10 @@ abcd<span class="highlight-green">e</span><span class="highlight-green">f</span>
 </v-click>
 
 ---
+title: 'Repetitions: The Plus'
+---
 
-<h1>Plus Sign  <span class="header-one-highlight">+</span></h1>
+<h1>Plus Sign  <span class="header-one-highlight">+</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: The Plus</span></h1>
 
 <p>To indicate that a character can occur one or more times, we put a plus sign <span class="highlight-gray">+</span> after a character. For example, indicate that the letter <span class="highlight-gray">e</span> can occur one or more times in the text.</p>
 
@@ -280,8 +297,10 @@ br<span class="highlight-green">ber</span><span class="highlight-green">beer</sp
 </v-click>
 
 ---
+title: 'Repetitions: The Question Mark'
+---
 
-<h1>Question Mark  <span class="header-one-highlight">?</span></h1>
+<h1>Question Mark  <span class="header-one-highlight">?</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: The Question Mark</span></h1>
 
 <p>To indicate that a character is optional, we put a <span class="highlight-gray">?</span> question mark after a character. For example, indicate that the following letter <span class="highlight-gray">u</span> is optional.</p>
 
@@ -301,8 +320,10 @@ br<span class="highlight-green">ber</span><span class="highlight-green">beer</sp
 </v-click>
 
 ---
+title: 'Repetitions: Curly Braces'
+---
 
-# Curly Braces - 1
+<h1>Curly Braces - 1 <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: Curly Braces</span></h1>
 
 <p>To express a certain number of occurrences of a character, at the end we write curly braces <span class="highlight-gray">{n}</span> along with how many times we want it to occur. For example, indicate that the following letter <span class="highlight-gray">e</span> can occur only <span class="highlight-gray">2</span> times.</p>
 
@@ -322,8 +343,10 @@ ber<span class="highlight-green">beer</span>beeer beeeer
 </v-click>
 
 ---
+title: 'Repetitions: Curly Braces'
+---
 
-# Curly Braces - 2
+<h1>Curly Braces - 2 <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: Curly Braces</span></h1>
 
 <p>To express at least a certain number of occurrences of a character, immediately after the character we write at least how many times we want it to occur followed by a comma <span class="highlight-gray">,</span> and wrapped inside curly braces <span class="highlight-gray">{n,}</span>. For example, indicate that the following letter <span class="highlight-gray">e</span> can occur at least <span class="highlight-gray">3</span> times.</p>
 
@@ -343,8 +366,10 @@ ber beer<span class="highlight-green">beeer</span><span class="highlight-green">
 </v-click>
 
 ---
+title: 'Repetitions: Curly Braces'
+---
 
-# Curly Braces - 3
+<h1>Curly Braces - 3 <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Repetitions: Curly Braces</span></h1>
 
 <p>To express the occurrence of a character in a certain number range, we write curly braces <span class="highlight-gray">{x,y}</span> with the interval we want to go to the end. For example, indicate that the following letter <span class="highlight-gray">e</span> can only occur between <span class="highlight-gray">1</span> and <span class="highlight-gray">3</span>.</p>
 
@@ -364,8 +389,10 @@ ber beer<span class="highlight-green">beeer</span><span class="highlight-green">
 </v-click>
 
 ---
+title: 'Grouping'
+---
 
-<h1>Parentheses  <span class="header-one-highlight">()</span>: Grouping</h1>
+<h1>Parentheses  <span class="header-one-highlight">()</span>: Grouping <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Grouping</span></h1>
 
 <p>We can group an expression and use these groups to reference or enforce some rules. To group an expression, we enclose <span class="highlight-gray">()</span> in parentheses. For now just group <span class="highlight-gray">haa</span> below.</p>
 
@@ -385,8 +412,10 @@ ha-ha, <span class="highlight-green">haa</span>-<span class="highlight-green">ha
 </v-click>
 
 ---
+title: 'Group Reference'
+---
 
-# Referencing a Group
+<h1>Referencing a Group <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Group Reference</span></h1>
 
 <p>The words <span class="highlight-gray">ha</span> and <span class="highlight-gray">haa</span> are grouped below. The first group is used by writing <span class="highlight-gray">\1</span> to avoid rewriting. Here 1 denotes the order of grouping. Type <span class="highlight-gray">\2</span> at the end of the expression to refer to the second group.</p>
 
@@ -405,6 +434,8 @@ ha-ha, <span class="highlight-green">haa</span>-<span class="highlight-green">ha
 ```
 </v-click>
 
+---
+title: 'Non-capturing Grouping'
 ---
 
 <h1>Parentheses  <span class="header-one-highlight">(?:)</span>: Non-capturing Grouping <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-capturing Grouping</span></h1>
