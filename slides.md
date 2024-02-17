@@ -438,7 +438,7 @@ title: 'Group Reference'
 title: 'Non-capturing Grouping'
 ---
 
-<h1>Parentheses  <span class="header-one-highlight">(?:)</span>: Non-capturing Grouping <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-capturing Grouping</span></h1>
+<h1>Parentheses <span class="header-one-highlight">(?:)</span>: Non-capturing Grouping <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-capturing Grouping</span></h1>
 
 <p>You can group an expression and ensure that it is not captured by references. For example, below are two groups. However, the first group reference we denote with <span class="highlight-gray">\1</span> actually indicates the second group, as the first is a non-capturing group.</p>
 
@@ -456,3 +456,242 @@ title: 'Non-capturing Grouping'
 /(?:ha)-ha,(haa)-\1/g
 ```
 </v-click>
+
+---
+title: 'Alternation'
+---
+
+<h1>Pipe Character <span class="header-one-highlight">|</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Alternation</span></h1>
+
+<p>It allows to specify that an expression can be in different expressions. Thus, all possible statements are written separated by the pipe sign <span class="highlight-gray">|</span>. This differs from charset <span class="highlight-gray">[abc]</span>, charsets operate at the character level. Alternatives are at the expression level. For example, the following expression would select both <span class="highlight-gray">cat</span> and <span class="highlight-gray">rat</span>. Add another pipe sign <span class="highlight-gray">|</span> to the end of the expression and type <span class="highlight-gray">dog</span> so that all words are selected.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">cat</span> <span class="highlight-green">rat</span> <span class="highlight-green">dog</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(c|r)at|dog/g
+```
+</v-click>
+
+---
+title: 'Escape Character'
+---
+
+<h1>Escape Character <span class="header-one-highlight">\</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Escape Character</span></h1>
+
+<p>There are special characters that we use when writing regex. <span class="highlight-gray">{ } [ ] / \ + * . $^ | ?</span> Before we can select these characters themselves, we need to use an escape character <span class="highlight-gray">\</span>. For example, to select the dot <span class="highlight-gray">.</span> and asterisk <span class="highlight-gray">*</span> characters in the text, let's add an escape character <span class="highlight-gray">\</span> before it.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+(<span class="highlight-green">*</span>) Asterisk<span class="highlight-green">.</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(\*|\.)/g
+```
+</v-click>
+
+---
+title: 'Start of The String'
+---
+
+<h1>Caret Sign <span class="header-one-highlight">^</span>: Selecting by Line Start
+ <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Start of The String</span></h1>
+
+<p>We were using <span class="highlight-gray">[0-9]</span> to find numbers. To find only numbers at the beginning of a line, prefix this expression with the <span class="highlight-gray">^</span> sign.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+Basic Omellette Recipe
+<br/><br/>
+<span class="highlight-green">1</span>. 3 eggs, beaten<br/>
+<span class="highlight-green">2</span>. 1 tsp sunflower oil<br/>
+<span class="highlight-green">3</span>. 1 tsp butter
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/^[0-9]/g
+```
+</v-click>
+
+---
+title: 'End of The String'
+---
+
+<h1>Dollar Sign <span class="header-one-highlight">$</span>: Selecting by End of Line
+ <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">End of The String</span></h1>
+
+<p>Let's use the <span class="highlight-gray">$</span> sign after the <span class="highlight-gray">html</span> value to find the <span class="highlight-gray">html</span> texts only at the end of the line.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+https://domain.com/what-is-html.<span class="highlight-green">html</span><br/>
+https://otherdomain.com/html-elements<br/>
+https://website.com/html5-features.<span class="highlight-green">html</span><br/>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/html$/g
+```
+</v-click>
+
+---
+title: 'Alphanumeric'
+---
+
+<h1>Word Character <span class="header-one-highlight">\w</span><span class="text-2xl">: Letter, Number and Underscore</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Alphanumeric</span></h1>
+
+<p>The expression <span class="highlight-gray">\w</span> is used to find letters, numbers and underscore characters. Let's use the expression <span class="highlight-gray">\w</span> to find word characters in the text.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">a</span><span class="highlight-green">b</span><span class="highlight-green">c</span><span class="highlight-green">A</span><span class="highlight-green">B</span><span class="highlight-green">C</span><span class="highlight-green">1</span><span class="highlight-green">2</span><span class="highlight-green">3</span><span class="highlight-green">_</span>.:!?
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\w/g
+```
+</v-click>
+
+---
+title: 'Non-alphanumeric'
+---
+
+<h1>Except Word Character <span class="header-one-highlight">\W</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-alphanumeric</span></h1>
+
+<p>The expression <span class="highlight-gray">\W</span> is used to find characters other than letters, numbers, and underscores.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+abcABC123<span class="highlight-green">&nbsp;</span>_<span class="highlight-green">.</span><span class="highlight-green">:</span><span class="highlight-green">!</span><span class="highlight-green">?</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\W/g
+```
+</v-click>
+
+---
+title: 'Digits'
+---
+
+<h1>Number Character <span class="header-one-highlight">\d</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Digits</span></h1>
+
+<p><span class="highlight-gray">\d</span> is used to find only number characters.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+abcABC<span class="highlight-green">1</span><span class="highlight-green">2</span><span class="highlight-green">3</span> .:!?
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\d/g
+```
+</v-click>
+
+---
+title: 'Non-digits'
+---
+
+<h1>Except Number Character <span class="header-one-highlight">\D</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-digits</span></h1>
+
+<p><span class="highlight-gray">\D</span> is used to find non-numeric characters.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">a</span><span class="highlight-green">b</span><span class="highlight-green">c</span><span class="highlight-green">A</span><span class="highlight-green">B</span><span class="highlight-green">C</span>123<span class="highlight-green">&nbsp;</span><span class="highlight-green">.</span><span class="highlight-green">:</span><span class="highlight-green">!</span><span class="highlight-green">?</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\D/g
+```
+</v-click>
+
+---
+title: 'Whitespace Characters'
+---
+
+<h1>Space Character <span class="header-one-highlight">\s</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Whitespace Characters</span></h1>
+
+<p><span class="highlight-gray">\s</span> is used to find only space characters.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+abcABC123<span class="highlight-green">&nbsp;</span>.:!?
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\s/g
+```
+</v-click>
+
+---
+title: 'Non-whitespace Characters'
+---
+
+<h1>Except Space Character <span class="header-one-highlight">\S</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Non-whitespace Characters</span></h1>
+
+<p><span class="highlight-gray">\S</span> is used to find non-space characters.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">a</span><span class="highlight-green">b</span><span class="highlight-green">c</span><span class="highlight-green">A</span><span class="highlight-green">B</span><span class="highlight-green">C</span><span class="highlight-green">1</span><span class="highlight-green">2</span><span class="highlight-green">3</span><span class="mx-1">&nbsp;</span><span class="highlight-green">.</span><span class="highlight-green">:</span><span class="highlight-green">!</span><span class="highlight-green">?</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\S/g
+```
+</v-click>
+
