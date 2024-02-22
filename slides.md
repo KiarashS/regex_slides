@@ -695,3 +695,179 @@ title: 'Non-whitespace Characters'
 ```
 </v-click>
 
+---
+title: 'Lookarounds'
+---
+
+<h1>Lookarounds <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds</span></h1>
+
+<p>If we want the phrase we're writing to come before or after another phrase, we need to "lookaround". Take the next step to learn how to "lookaround".</p>
+
+---
+title: 'Lookarounds: Positive Lookahead'
+---
+
+<h1>Positive Lookahead: <span class="header-one-highlight">(?=)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Positive Lookahead</span></h1>
+
+<p>For example, we want to select the hour value in the text. Therefore, to select only the numerical values that have <span class="highlight-gray">PM</span> after them, we need to write the positive look-ahead expression <span class="highlight-gray">(?=)</span> after our expression. Include <span class="highlight-gray">PM</span> after the <span class="highlight-gray">=</span> sign inside the parentheses.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+Date: 4 Aug <span class="highlight-green">3</span>PM
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\d+(?=PM)/g
+```
+</v-click>
+
+---
+title: 'Lookarounds: Positive Lookbehind'
+---
+
+<h1>Negative Lookahead: <span class="header-one-highlight">(?<=)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Positive Lookbehind</span></h1>
+
+<p>For example, we want to select the price value in the text. Therefore, to select only the number values that are preceded by <span class="highlight-gray">$</span>, we need to write the positive lookbehind expression <span class="highlight-gray">(?<=)</span> before our expression. Add <span class="highlight-gray">\$</span> after the <span class="highlight-gray">=</span> sign inside the parentheses.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+Product Code: 1064 Price: $<span class="highlight-green">5</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(?<=\$)\d+/g
+```
+</v-click>
+
+---
+title: 'Lookarounds: Negative Lookbehind'
+---
+
+<h1>Negative Lookahead: <span class="header-one-highlight">(?<!)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Negative Lookbehind</span></h1>
+
+<p>For example, we want to select numbers in the text other than the price value. Therefore, to select only numeric values that are not preceded by <span class="highlight-gray">$</span>, we need to write the negative lookbehind <span class="highlight-gray">(?<!)</span> before our expression. Add <span class="highlight-gray">\$</span> after the <span class="highlight-gray">!</span> sign inside the parentheses.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+Product Code: <span class="highlight-green">1064</span> Price: $5
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/(?<!\$)\d+/g
+```
+</v-click>
+
+---
+title: 'Flags'
+---
+
+<h1>Flags <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Flags</span></h1>
+
+<p>Flags change the output of the expression. That's why flags are also called <span class="highlight-gray">modifiers</span>. Flags determine whether the typed expression treats text as separate lines, is case sensitive, or finds all matches. Continue to the next step to learn the flags.</p>
+
+---
+title: 'Flags: Global'
+---
+
+<h1>Global Flag <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Flags: Global</span></h1>
+
+<p>The <span class="highlight-gray">global</span> flag causes the expression to select all matches. If not used it will only select the first match. Now enable the <span class="highlight-gray">global</span> flag to be able to select all matches.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">domain.com</span>, <span class="highlight-green">test.com</span>, <span class="highlight-green">site.com</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\w+\.com/g
+```
+</v-click>
+
+---
+title: 'Flags: Multiline'
+---
+
+<h1>Multiline Flag <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Flags: Multiline</span></h1>
+
+<p>Regex sees all text as one line. But we use the <span class="highlight-gray">multiline</span> flag to handle each line separately. In this way, the expressions we write to identify patterns at the end of lines work separately for each line. Now enable the <span class="highlight-gray">multiline</span> flag to find all matches.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">domain.com</span><br/><span class="highlight-green">test.com</span><br/><span class="highlight-green">site.com</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\w+\.com$/gm
+```
+</v-click>
+
+---
+title: 'Flags: Case Insensitive'
+---
+
+<h1>Case-insensitive Flag <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Flags: Case Insensitive</span></h1>
+
+<p>In order to remove the case-sensitivity of the expression we have written, we must activate the <span class="highlight-gray">case-insensitive</span> flag.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">DOMAIN.COM</span><br/><span class="highlight-green">TEST.COM</span><br/><span class="highlight-green">SITE.COM</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\w+\.com$/gmi
+```
+</v-click>
+
+---
+title: 'Lazy Matching'
+---
+
+<h1>Lazy Matching <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lazy Matching</span></h1>
+
+<p>Lazy matchmaking, unlike greedy matching, stops at the first matching. For example, in the example below, add a <span class="highlight-gray">?</span> after <span class="highlight-gray">*</span> to find the first match that ends with the letter <span class="highlight-gray">r</span> and is preceded by any character. It means that this match will stop at the first letter <span class="highlight-gray">r</span>.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">ber</span> beer beeer beeeer
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/.*?r/
+```
+</v-click>
