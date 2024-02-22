@@ -727,10 +727,33 @@ Date: 4 Aug <span class="highlight-green">3</span>PM
 </v-click>
 
 ---
+title: 'Lookarounds: Negative Lookahead'
+---
+
+<h1>Negative Lookahead: <span class="header-one-highlight">(?!)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Negative Lookahead</span></h1>
+
+<p>For example, we want to select numbers other than the hour value in the text. Therefore, we need to write the negative look-ahead <span class="highlight-gray">(?!)</span> expression after our expression to select only the numerical values that do not have <span class="highlight-gray">PM</span> after them. Include <span class="highlight-gray">PM</span> after the <span class="highlight-gray">!</span> sign inside the parentheses.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+Date: <span class="highlight-green">4</span> Aug 3PM
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/\d+(?!PM)/g
+```
+</v-click>
+
+---
 title: 'Lookarounds: Positive Lookbehind'
 ---
 
-<h1>Negative Lookahead: <span class="header-one-highlight">(?<=)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Positive Lookbehind</span></h1>
+<h1>Positive Lookbehind: <span class="header-one-highlight">(?<=)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Positive Lookbehind</span></h1>
 
 <p>For example, we want to select the price value in the text. Therefore, to select only the number values that are preceded by <span class="highlight-gray">$</span>, we need to write the positive lookbehind expression <span class="highlight-gray">(?<=)</span> before our expression. Add <span class="highlight-gray">\$</span> after the <span class="highlight-gray">=</span> sign inside the parentheses.</p>
 
@@ -753,9 +776,9 @@ Product Code: 1064 Price: $<span class="highlight-green">5</span>
 title: 'Lookarounds: Negative Lookbehind'
 ---
 
-<h1>Negative Lookahead: <span class="header-one-highlight">(?<!)</span> <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Negative Lookbehind</span></h1>
+<h1>Negative Lookbehind: <span class="header-one-highlight">(?&lt;!)</span> <span class="float-right text-xs rounded-sm px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Lookarounds: Negative Lookbehind</span></h1>
 
-<p>For example, we want to select numbers in the text other than the price value. Therefore, to select only numeric values that are not preceded by <span class="highlight-gray">$</span>, we need to write the negative lookbehind <span class="highlight-gray">(?<!)</span> before our expression. Add <span class="highlight-gray">\$</span> after the <span class="highlight-gray">!</span> sign inside the parentheses.</p>
+<p>For example, we want to select numbers in the text other than the price value. Therefore, to select only numeric values that are not preceded by <span class="highlight-gray">$</span>, we need to write the negative lookbehind <span class="highlight-gray">(?&lt;!)</span> before our expression. Add <span class="highlight-gray">\$</span> after the <span class="highlight-gray">!</span> sign inside the parentheses.</p>
 
 <v-click>
 <div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
@@ -846,6 +869,29 @@ title: 'Flags: Case Insensitive'
 
 ```regex
 /\w+\.com$/gmi
+```
+</v-click>
+
+---
+title: 'Greedy Matching'
+---
+
+<h1>Greedy Matching <span class="float-right text-xs rounded-sm	px-1 border-double border-4 border-indigo-600 dark:border-indigo-200">Greedy Matching</span></h1>
+
+<p>Regex does a greedy match by default. This means that the matchmaking will be as long as possible. Check out the example below. It refers to any match that ends in <span class="highlight-gray">r</span> and can be any character preceded by it. But it does not stop at the first letter <span class="highlight-gray">r</span>.</p>
+
+<v-click>
+<div class="text-lg border-b-2 border-indigo-500 w-fit">Text</div>
+<div class="text-sm mt-2 glass-card mb-5">
+<span class="highlight-green">ber beer beeer beeeer</span>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-lg mb-2 border-b-2 border-indigo-500 w-fit">Regex</div>
+
+```regex
+/.*r/
 ```
 </v-click>
 
