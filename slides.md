@@ -40,7 +40,7 @@ Ultimate Guide to Regular Expressions
 Presentation slides for AI scientists
 
 <div class="pt-70">
-  <span class="text-sm">By Kiarash Soleimanzadeh | <a href="https://www.kiarashs.ir" target="_blank" class="text-sm">www.kiarashs.ir</a></span>
+  <span class="text-sm text-pink-700">By Kiarash Soleimanzadeh | <a href="https://www.kiarashs.ir" target="_blank" class="text-sm text-indigo-800">www.kiarashs.ir</a></span>
   <br/><br/>
   <span @cilick="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
