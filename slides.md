@@ -33,14 +33,16 @@ fonts:
   mono: 'Fira Code'
 ---
 
-<h2 class="-mt-20">
+<h2 class="-mt-10">
 Ultimate Guide to Regular Expressions
 </h2>
 
 Presentation slides for AI scientists
 
 <div class="pt-70">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+  <span class="text-sm">By Kiarash Soleimanzadeh | <a href="https://www.kiarashs.ir" target="_blank" class="text-sm">www.kiarashs.ir</a></span>
+  <br/><br/>
+  <span @cilick="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
 </div>
