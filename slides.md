@@ -37,7 +37,7 @@ fonts:
 Ultimate Guide to Regular Expressions
 </h2>
 
-Presentation slides for AI scientists
+Presentation slides for data scientists
 
 <div class="pt-70">
   <span class="text-sm text-pink-700">By Kiarash Soleimanzadeh | <a href="https://www.kiarashs.ir" target="_blank" class="text-sm text-indigo-800">www.kiarashs.ir</a></span>
